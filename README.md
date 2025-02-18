@@ -1,19 +1,3 @@
-# Welcome to React Router!
-
-A modern, production-ready template for building full-stack React applications using React Router.
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
 ## Getting Started
 
 ### Installation
@@ -42,59 +26,36 @@ Create a production build:
 npm run build
 ```
 
-## Deployment
+### Styling Guide
 
-### Docker Deployment
+## Colors
 
-This template includes three Dockerfiles optimized for different package managers:
+Para los colores hemos elegido los siguientes:
+:{
+--color-brown: #b68c5a;
+--color-black: #000000;
+--color-gray: #d3d3d3;
+--color-red: #ff0000;
+--color-green: #00ff00;
+--color-blue: #409eff;
+}
 
-- `Dockerfile` - for npm
-- `Dockerfile.pnpm` - for pnpm
-- `Dockerfile.bun` - for bun
+Siendo el marron, el negro y el gris como paleta principal de colores y el rojo, verde y azul los colores auxiliares del proyecto.
 
-To build and run using Docker:
+## Typography
 
-```bash
-# For npm
-docker build -t my-app .
+En la tipografía hemos elegido tres distintas para cumplir diferentes funciones:
 
-# For pnpm
-docker build -f Dockerfile.pnpm -t my-app .
+- Instrument Serif: Para los titulos y texto a destacar.
+- Inter: Usado en texto general y tipografia principal del proyecto.
+- Jaldi: Para textos más específicos y textos con importancia.
 
-# For bun
-docker build -f Dockerfile.bun -t my-app .
+## Components
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+Como componentes tenemos 5 diferentes, siendo estos:
 
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+- Header: Como su nombre indica se trata del header, que funciona como layout para todas las paginas.
+- Footer: Al igual que el header pero la parte inferior de las paginas.
+- Formulario Contacto: Se trata de un formulario para ponerse en contacto.
+- Card: Una plantilla de card para todas las cards.
+- Button: Un boton general que tendrá distintas variaciones para distintas funciones.
