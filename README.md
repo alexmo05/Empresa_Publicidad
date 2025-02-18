@@ -59,3 +59,7 @@ Como componentes tenemos 5 diferentes, siendo estos:
 - Formulario Contacto: Se trata de un formulario para ponerse en contacto.
 - Card: Una plantilla de card para todas las cards.
 - Button: Un boton general que tendrá distintas variaciones para distintas funciones.
+
+### Link to Figma:
+
+https://www.figma.com/design/f3EGpHu4wJd1YKnEuO6NGk/DISE%C3%91O?m=auto&t=hSAHxwASXTYIzBc4-6
