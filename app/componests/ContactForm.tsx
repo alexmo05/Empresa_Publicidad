@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button"; // Importamos el botón reutilizable
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -9,8 +10,7 @@ const ContactForm = () => {
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const name = event.target.name;
-    const value = event.target.value;
+    const { name, value } = event.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -23,14 +23,16 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-[#b98d5d] p-6 rounded-lg shadow-lg">
-      <h2 className="text-lg font-bold text-white bg-black p-2 rounded-t-lg">
+    <div className="max-w-md mx-auto bg-[var(--color-brown)] p-6 rounded-lg shadow-lg">
+      <h2 className="text-lg font-bold text-white bg-[var(--color-black)] p-2 rounded-t-lg">
         Contacta con nosotros
       </h2>
       <form className="mt-4" onSubmit={handleSubmit}>
         <div className="flex space-x-4">
           <div className="w-1/2">
-            <label htmlFor="nombre" className="block text-sm font-medium">Nombre</label>
+            <label htmlFor="nombre" className="block text-sm font-medium text-white">
+              Nombre
+            </label>
             <input
               type="text"
               id="nombre"
@@ -38,11 +40,13 @@ const ContactForm = () => {
               value={formData.nombre}
               onChange={handleChange}
               required
-              className="w-full p-2 rounded-lg bg-gray-200 text-black  focus:outline-none"
+              className="w-full p-2 rounded-lg bg-[var(--color-gray)] text-[var(--color-black)] focus:outline-none"
             />
           </div>
           <div className="w-1/2">
-            <label htmlFor="apellidos" className="block text-sm font-medium">Apellidos</label>
+            <label htmlFor="apellidos" className="block text-sm font-medium text-white">
+              Apellidos
+            </label>
             <input
               type="text"
               id="apellidos"
@@ -50,12 +54,14 @@ const ContactForm = () => {
               value={formData.apellidos}
               onChange={handleChange}
               required
-              className="w-full p-2 rounded-lg bg-gray-200  text-black focus:outline-none"
+              className="w-full p-2 rounded-lg bg-[var(--color-gray)] text-[var(--color-black)] focus:outline-none"
             />
           </div>
         </div>
         <div className="mt-4">
-          <label htmlFor="email" className="block text-sm font-medium">Correo Electrónico</label>
+          <label htmlFor="email" className="block text-sm font-medium text-white">
+            Correo Electrónico
+          </label>
           <input
             type="email"
             id="email"
@@ -63,27 +69,24 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full p-2 rounded-lg bg-gray-200 text-black  focus:outline-none"
+            className="w-full p-2 rounded-lg bg-[var(--color-gray)] text-[var(--color-black)] focus:outline-none"
           />
         </div>
         <div className="mt-4">
-          <label htmlFor="comentario" className="block text-sm font-medium">Comentario</label>
+          <label htmlFor="comentario" className="block text-sm font-medium text-white">
+            Comentario
+          </label>
           <textarea
             id="comentario"
             name="comentario"
             value={formData.comentario}
             onChange={handleChange}
             required
-            className="w-full p-2 rounded-lg bg-gray-200  text-black focus:outline-none h-32"
+            className="w-full p-2 rounded-lg bg-[var(--color-gray)] text-[var(--color-black)] focus:outline-none h-32"
           ></textarea>
         </div>
         <div className="mt-4 flex justify-center">
-          <button
-            type="submit"
-            className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800"
-          >
-            Enviar
-          </button>
+          <Button text="Enviar" variant="primary" />
         </div>
       </form>
     </div>
