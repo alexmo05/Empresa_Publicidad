@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Search } from "lucide-react";
 import logo from "../img/logo.png";
+import { Link, NavLink } from 'react-router'
 
 export default function Header() {
   const [search, setSearch] = useState("");
@@ -14,15 +15,25 @@ export default function Header() {
       </div>
 
       {/* Links */}
-      <ul className="hidden md:flex space-x-6 text-sm">
-        {["Home", "Nosotros", "Servicios", "Noticias", "Contacto"].map(
-          (item) => (
-            <li key={item} className="hover:text-[var(--color-gray)] cursor-pointer">
-              {item}
-            </li>
-          )
-        )}
-      </ul>
+      <div className="">
+        <nav className=" gap-5 text-md">
+          <Link to="home" className="px-4 py-2 rounded-lg transition duration-300">
+            Home
+          </Link>
+          <Link to="nosotros" className="px-4 py-2 rounded-lg transition duration-300">
+            Nosotros
+          </Link>
+          <Link to="servicios" className="whitespace-nowrap px-3 py-2 rounded-lg transition">
+            Servicios
+          </Link>
+          <Link to="noticias" className="whitespace-nowrap px-3 py-2 rounded-lg ">
+            Noticias
+          </Link>
+          <Link to="contactos" className="whitespace-nowrap px-3 py-2 rounded-lg">
+            Contactos
+          </Link>
+        </nav>
+      </div>
 
       {/* Search Bar */}
       <div className="relative">
